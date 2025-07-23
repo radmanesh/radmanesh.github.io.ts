@@ -26,16 +26,14 @@ jobs:
         with:
           bun-version: latest
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-        with:
-          static_site_generator: next
-
       - name: Install dependencies
         run: bun install
 
       - name: Build with custom commands
         run: bun run content:build && bun run build
+
+      - name: List build output
+        run: ls -la ./out
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
