@@ -35,7 +35,7 @@ export async function generateMetadata({ params }: PostPageProps) {
       title: post.title,
       description: post.summary,
       // todo - use env variable for the url
-      url: "https://radmanesh.vercel.app/blog/" + slug,
+      url: "https://radmanesh.github.io/radmanesh.github.io.ts/blog/" + slug,
       images: [post.cover],
       siteName: "Radmanesh",
     },

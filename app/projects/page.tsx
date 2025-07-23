@@ -3,19 +3,13 @@ import { SectionTitle } from "@/components/shared/section";
 import { ProjectCard } from "@/components/shared/project-card";
 import { PaginationButton } from "@/components/shared/pagination-button";
 
-// --------- PAGE PROPS---------
-interface ProjectsPageProps {
-  searchParams: Promise<{ page?: string }>;
-}
+export const dynamic = "force-static";
 
 // --------- PAGE ---------
-export default async function ProjectsPage({
-  searchParams,
-}: ProjectsPageProps) {
-  const { page } = await searchParams;
+export default function ProjectsPage() {
   const start = 0;
   const ITEMS_PER_PAGE = 6;
-  const currentPage = Number(page) || 1;
+  const currentPage = 1; // Static page shows first page only
   const end = ITEMS_PER_PAGE * currentPage;
 
   const visibleProjects = PROJECTS.slice(start, end);
