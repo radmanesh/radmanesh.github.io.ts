@@ -8,7 +8,7 @@ export const dynamic = "force-static";
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = "https://radmanesh.github.io/radmanesh.github.io.ts";
 
-  const staticRoutes = ["", "/about", "/blog", "/projects"].map((route) => ({
+  const staticRoutes = ["", "/about", "/blog", "/projects", "/lab"].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date().toISOString(),
   }));
