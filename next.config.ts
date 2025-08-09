@@ -9,8 +9,11 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: '/radmanesh.github.io.ts',
-  assetPrefix: '/radmanesh.github.io.ts/',
+  // Only use basePath in production for GitHub Pages
+  ...(process.env.NODE_ENV === 'production' && {
+    basePath: '/radmanesh.github.io.ts',
+    assetPrefix: '/radmanesh.github.io.ts/',
+  }),
 };
 
 export default withContentlayer(nextConfig);
